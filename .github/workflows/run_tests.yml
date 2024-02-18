@@ -83,7 +83,7 @@ jobs:
         uses: actions/download-artifact@v3
       - name: first_test
         if: "github.event.inputs.deployment_target == 'first_test'"
-        run: pytest tests/test_button.py::test_button_exist --alluredir=allure-results
+        run: pytest tests --alluredir=allure-results
         continue-on-error: true
       - name: second_test
         if: "github.event.inputs.deployment_target == 'second_test'"
